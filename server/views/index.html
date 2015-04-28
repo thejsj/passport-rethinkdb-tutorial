@@ -1,0 +1,16 @@
+<body>
+  <h1>Passport/RethinkDB Example</h1>
+{{#user}}
+  <img style='width: 100px; height: 100px;' src='{{ avatarUrl }}'>
+  <p>You are logged in as <span style="font-weight: bold;">{{ login }}</span>. Account created through <span style="font-weight: bold;">{{ type }}</span>.</p>
+  <a href='/auth/user'>See user data</a>
+  </br>
+  <a href='/auth/logout'>Logout</a>
+{{/user}}
+{{^user}}
+  <p>You are not logged in.</p>
+  <a href='/auth/login/github'>Login with GitHub</a>
+  </br>
+  <a href='/auth/login/twitter'>Login with Twitter</a>
+{{/user}}
+</body>

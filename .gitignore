@@ -1,0 +1,4 @@
+!**/*
+node_modules
+congig/*
+!config/default.js
