@@ -4,7 +4,6 @@
 var config = require('config');
 var express = require('express');
 var session = require('express-session');
-var bodyParser = require('body-parser');
 var engines = require('consolidate');
 
 var app = express();
@@ -13,10 +12,6 @@ var authRouter = require('./auth/auth-router');
 
 // Middleware
 app
-  .use(bodyParser.urlencoded({
-    extended: true
-  }))
-  .use(bodyParser.json())
   .use(session({
     secret: 'zfnzkwjehgweghw',
     resave: false,
