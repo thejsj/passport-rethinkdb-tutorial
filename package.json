@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "export NODE_ENV='dev'; ./node_modules/nodemon/bin/nodemon.js ./server"
+    "dev": "./node_modules/nodemon/bin/nodemon.js ./server"
   },
   "keywords": [
     "passport",
