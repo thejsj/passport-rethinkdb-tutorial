@@ -1,4 +1,4 @@
 !**/*
 node_modules
-congig/*
+config/*
 !config/default.js
