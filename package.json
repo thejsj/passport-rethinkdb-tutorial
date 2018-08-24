@@ -16,18 +16,17 @@
   "author": "thejsj",
   "license": "MIT",
   "dependencies": {
-    "config": "^1.12.0",
-    "consolidate": "^0.12.1",
-    "express": "^4.12.3",
-    "express-session": "^1.11.1",
-    "mustache": "^2.0.0",
-    "passport": "^0.2.1",
-    "passport-github": "^0.1.5",
-    "passport-twitter": "^1.0.3",
-    "rethinkdb": "^2.0.0",
-    "rethinkdb-init": "0.0.2"
+    "config": "^2.0.1",
+    "consolidate": "^0.15.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mustache": "^2.3.2",
+    "passport": "^0.4.0",
+    "passport-github": "^1.1.0",
+    "rethinkdb": "^2.3.3",
+    "rethinkdb-init": "0.2.2"
   },
   "devDependencies": {
-    "nodemon": "^1.3.7"
+    "nodemon": "^1.18.3"
   }
 }
