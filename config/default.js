@@ -1,11 +1,7 @@
 module.exports = {
   github: {
-    clientID: '', // Go to github.com, create an application and add clientID
-    clientSecret: '' // Go to github.com, create an application and add clientSecret
-  },
-  twitter: {
-    consumerKey: '', // Go to apps.twitter.com, create an application and add consumerKey
-    consumerSecret: '' // Go to apps.twitter.com, create an application and add consumerSecret
+    clientID: 'fd4a8223cfa01d202bfa',
+    clientSecret: 'c695a6b904165d3f8932ff71b0b9c8ec43e12022'
   },
   url: '127.0.0.1',
   ports: {

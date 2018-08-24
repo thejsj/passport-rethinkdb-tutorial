@@ -4,7 +4,6 @@
 var config = require('config');
 var passport = require('passport');
 var GitHubStrategy = require('passport-github').Strategy;
-var TwitterStrategy = require('passport-twitter').Strategy;
 var r = require('../db');
 
 passport.serializeUser(function (user, done) {
@@ -71,23 +70,6 @@ passport.use(new GitHubStrategy({
       'type': 'github'
     };
   }, 'github')
-));
-
-// Twitter
-passport.use(new TwitterStrategy({
-    consumerKey: config.get('twitter').consumerKey,
-    consumerSecret: config.get('twitter').consumerSecret,
-    callbackURL: callbackURL + '/twitter'
-  },
-  loginCallbackHandler(function (profile) {
-    return {
-      'login': profile.username,
-      'name': profile.displayName || null,
-      'url': profile._raw.expanded_url || null,
-      'avatarUrl': profile._json.profile_image_url,
-      'type': 'twitter'
-    };
-  }, 'twitter')
 ));
 
 passport.checkIfLoggedIn = function (req, res, next) {

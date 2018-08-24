@@ -13,12 +13,6 @@ authRouter.use('/login/callback/github', auth.authenticate('github'), function (
 });
 authRouter.get('/login/github', auth.authenticate('github'));
 
-// Twitter
-authRouter.use('/login/callback/twitter', auth.authenticate('twitter'), function (req, res) {
-  res.redirect('/');
-});
-authRouter.get('/login/twitter', auth.authenticate('twitter'));
-
 // All
 authRouter.use('/user', authControllers.getUser);
 authRouter.use('/logout', authControllers.logout);
