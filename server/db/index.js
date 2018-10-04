@@ -14,16 +14,29 @@ r.getNewConnection = function () {
       return conn;
     });
 };
+// Second run always fail. Create conditionally
+r.getNewConnection().then(conn=> {
+    r
+        .dbList()
+        .contains(config.get('rethinkdb').db)
+        .run(conn, (err, exists)=>{
+        console.log("[rse]",config.get('rethinkdb').db, err, exists);
+        if (!exists) {
 
-r.init(config.get('rethinkdb'), [
-  {
-    name: 'users',
-    indexes: ['login']
-  }
-]).then(function (conn) {
-  r.conn = conn;
-  r.connections.push(conn);
-  r.conn.use(config.get('rethinkdb').db);
-});
+            r.init(config.get('rethinkdb'), [
+                {
+                    name: 'users',
+                    indexes: ['login']
+                }
+            ]).then(function (conn) {
+                r.conn = conn;
+                r.connections.push(conn);
+                r.conn.use(config.get('rethinkdb').db);
+            });
+
+        }
+    })
+})
+
 
 module.exports = r;
